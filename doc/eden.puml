@@ -1,4 +1,4 @@
-@startuml Diagrama de Estado Eden
+@startuml Diagrama de Estado
 
 class Cliente{
     - nombre
@@ -27,7 +27,7 @@ class Proveedor{
     - CUIT 
     - telefono
     - email
-    - producto
+    - insumo
 }
 
 class Reserva{

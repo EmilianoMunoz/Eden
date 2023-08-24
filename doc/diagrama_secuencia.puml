@@ -3,7 +3,7 @@ actor Cliente
 Cliente -> Interfaz : Solicitar reserva
 Interfaz -> Servidor : Obtener datos
 Servidor -> Servidor : Validar datos
-Servidor -> Repositorio : Enviar solicitud datos
+Servidor -> Repositorio : Enviar solicitud reserva
 database DataBase
 Repositorio -> DataBase : Insertar datos reserva
 DataBase -> Repositorio : Persistido

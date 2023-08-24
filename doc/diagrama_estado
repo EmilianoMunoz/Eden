@@ -1,0 +1,17 @@
+@startuml
+[*] --> BusquedaCabaña
+BusquedaCabaña --> ChequeoDisponibilidad
+state fork_state <<fork>>
+ChequeoDisponibilidad --> fork_state
+fork_state --> Disponible
+Disponible --> EdicionReserva
+fork_state --> NoDisponible
+NoDisponible --> BusquedaCabaña
+EdicionReserva --> InformacionDePago
+EdicionReserva --> ChequeoDisponibilidad 
+NoDisponible --> CancelacionReserva
+InformacionDePago --> ConfirmacionReserva
+ConfirmacionReserva --> [*]
+CancelacionReserva --> [*]
+
+@enduml

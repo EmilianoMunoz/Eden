@@ -1,0 +1,18 @@
+@startuml Diagrama de secuencia
+actor Cliente
+Cliente -> Interfaz : Solicitar reserva
+Interfaz -> Servidor : Obtener datos
+Servidor -> Servidor : Validar datos
+Servidor -> Repositorio : Enviar solicitud datos
+database DataBase
+Repositorio -> DataBase : Insertar datos reserva
+DataBase -> Repositorio : Persistido
+Repositorio -> Servidor : Persistido
+Servidor -> Interfaz : Persistido
+Interfaz -> Cliente : Persistido
+
+
+
+
+
+@enduml

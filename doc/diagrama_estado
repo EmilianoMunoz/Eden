@@ -7,10 +7,10 @@ fork_state --> Disponible
 Disponible --> EdicionReserva
 fork_state --> NoDisponible
 NoDisponible --> BusquedaCabaña
-EdicionReserva --> InformacionDePago
+EdicionReserva --> ConfirmacionReserva
 EdicionReserva --> ChequeoDisponibilidad 
+EdicionReserva --> CancelacionReserva
 NoDisponible --> CancelacionReserva
-InformacionDePago --> ConfirmacionReserva
 ConfirmacionReserva --> [*]
 CancelacionReserva --> [*]
 

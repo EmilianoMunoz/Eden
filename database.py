@@ -4,7 +4,7 @@ import os
 
 db = SQLAlchemy()
 
-USER_DB = 'postgres'
+USER_DB = 'emiliano'
 PASS_DB = '40321766'
 URL_DB = 'localhost'
 NAME_DB = 'eden'

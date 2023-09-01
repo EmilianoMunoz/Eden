@@ -1,31 +1,35 @@
-class Cabana:
-    __capacidad = ''
-    __tipo = ''
-    __nivel = ''
-    __codigo = ''
+from app import db
+from sqlalchemy.ext.hybrid import hybrid_property
 
-    @property
+class Cabana(db.Model):
+    __id = db.Column(db.Integer, primary_key=True)
+    __capacidad = db.Column(db.String(255))
+    __tipo = db.Column(db.String(255))
+    __nivel = db.Column(db.String(255))
+    __codigo = db.Column(db.String(255))
+
+    @hybrid_property
     def codigo(self)->str:
         return self.__codigo
     @codigo.setter
     def codigo(self, code:str):
         self.__codigo = code    
 
-    @property
+    @hybrid_property
     def capacidad(self)->str:
         return self.__capacidad
     @capacidad.setter
     def capacidad(self, capacity:str):
         self.__capacidad = capacity
 
-    @property
+    @hybrid_property
     def tipo(self)->str:
         return self.__tipo
     @tipo.setter
     def tipo(self, type:str):
         self.__tipo = type
 
-    @property
+    @hybrid_property
     def nivel(self)->str:
         return self.__nivel
     @nivel.setter

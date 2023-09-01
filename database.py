@@ -8,7 +8,7 @@ USER_DB = 'emiliano'
 PASS_DB = '40321766'
 URL_DB = 'localhost'
 NAME_DB = 'eden'
-FULL_URL_DB = f'postgresql://{USER_DB}:{PASS_DB}@{URL_DB}/{NAME_DB}'
+FULL_URL_DB = f'postgresql://$USER_DB:$PASS_DB@$URL_DB/$NAME_DB'
 
 load_dotenv()
 

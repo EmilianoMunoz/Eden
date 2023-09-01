@@ -1,26 +1,30 @@
-class Administrador:
-__tablename__ = 'administradores'
-__nombre = ''
-__codigo = ''
-__puesto = ''
+from app import db
+from sqlalchemy.ext.hybrid import hybrid_property
 
-@property
-def codigo(self)->str:
-    return self.__codigo
-@codigo.setter
-def codigo(self, code:str):
-    self.__codigo = code
+class Administrador(db.Model):
+    __tablename__ = 'administradores'
+    __id = db.Column(db.Integer, primary_key=True)
+    __codigo = db.Column(db.String(255))
+    __nombre = db.Column(db.String(255))
+    __puesto = db.Column(db.String(255))
 
-@property
-def nombre(self)->str:
-    return self.__nombre
-@nombre.setter
-def nombre(self, name:str):
-    self.__nombre = name 
+    @hybrid_property
+    def codigo(self)->str:
+        return self.__codigo
+    @codigo.setter
+    def codigo(self, code:str):
+        self.__codigo = code
 
-@property
-def puesto(self)->str:
-    return self.__puesto
-@puesto.setter
-def puesto(self, title:str):
-    self.__puesto = title
+    @hybrid_property
+    def nombre(self)->str:
+        return self.__nombre
+    @nombre.setter
+    def nombre(self, name:str):
+        self.__nombre = name 
+
+    @hybrid_property
+    def puesto(self)->str:
+        return self.__puesto
+    @puesto.setter
+    def puesto(self, title:str):
+        self.__puesto = title

@@ -1,49 +1,53 @@
-class Proveedor:
+from app import db
+from sqlalchemy.ext.hybrid import hybrid_property
+
+class Proveedor(db.Model):
     __tablename__: 'proveedores'
     
-    __nombre = ''
-    __codigo = ''
-    __cuit = '' 
-    __telefono = ''
-    __email = ''
-    __insumo = ''
+    __id = db.Column(db.Integer, primary_key=True)
+    __nombre = db.Column(db.String(255))
+    __codigo = db.Column(db.String(255))
+    __cuit = db.Column(db.String(255))
+    __telefono = db.Column(db.String(255))
+    __email = db.Column(db.String(255))
+    __insumo = db.Column(db.String(255))
 
-    @property
+    @hybrid_property
     def codigo(self)->str:
         return self.__codigo
     @codigo.setter
     def codigo(self, code:str):
         self.__codigo = code
 
-    @property
+    @hybrid_property
     def nombre(self)->str:
         return self.__nombre
     @nombre.setter
     def nombre(self, name:str):
         self.__nombre = name
 
-    @property
+    @hybrid_property
     def cuit(self)->str:
         return self.__cuit
     @cuit.setter
     def cuit(self, cuit:str):
         self.__cuit = cuit
 
-    @property
+    @hybrid_property
     def email(self)->str:
         return self.__email
     @email.setter
     def email(self, email:str):
         self.__email = email
 
-    @property
+    @hybrid_property
     def telefono(self)->str:
         return self.__telefono
     @telefono.setter
     def telefono(self, phone:str):
         self.__telefono = phone
 
-    @property
+    @hybrid_property
     def insumo(self)->str:
         return self.__insumo
     @insumo.setter

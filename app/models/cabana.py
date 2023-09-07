@@ -2,11 +2,11 @@ from app import db
 from sqlalchemy.ext.hybrid import hybrid_property
 
 class Cabana(db.Model):
-    __id = db.Column(db.Integer, primary_key=True)
-    __capacidad = db.Column(db.String(255))
-    __tipo = db.Column(db.String(255))
-    __nivel = db.Column(db.String(255))
-    __codigo = db.Column(db.String(255))
+    __id = db.Column('id', db.Integer, primary_key=True)
+    __capacidad = db.Column('capacidad', db.String(255))
+    __tipo = db.Column('tipo', db.String(255))
+    __nivel = db.Column('nivel', db.String(255))
+    __codigo = db.Column('codigo', db.String(255))
 
     @hybrid_property
     def codigo(self)->str:

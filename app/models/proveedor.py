@@ -4,13 +4,13 @@ from sqlalchemy.ext.hybrid import hybrid_property
 class Proveedor(db.Model):
     __tablename__: 'proveedores'
     
-    __id = db.Column(db.Integer, primary_key=True)
-    __nombre = db.Column(db.String(255))
-    __codigo = db.Column(db.String(255))
-    __cuit = db.Column(db.String(255))
-    __telefono = db.Column(db.String(255))
-    __email = db.Column(db.String(255))
-    __insumo = db.Column(db.String(255))
+    __id = db.Column('id', db.Integer, primary_key=True)
+    __nombre = db.Column('nombre', db.String(255))
+    __codigo = db.Column('codigo', db.String(255))
+    __cuit = db.Column('cuit', db.String(255))
+    __telefono = db.Column('telefono', db.String(255))
+    __email = db.Column('email', db.String(255))
+    __insumo = db.Column('insumo', db.String(255))
 
     @hybrid_property
     def codigo(self)->str:

@@ -3,10 +3,10 @@ from sqlalchemy.ext.hybrid import hybrid_property
 
 class Administrador(db.Model):
     __tablename__ = 'administradores'
-    __id = db.Column(db.Integer, primary_key=True)
-    __codigo = db.Column(db.String(255))
-    __nombre = db.Column(db.String(255))
-    __puesto = db.Column(db.String(255))
+    __id = db.Column('id', db.Integer, primary_key=True)
+    __codigo = db.Column('codigo', db.String(255))
+    __nombre = db.Column('nombre', db.String(255))
+    __puesto = db.Column('puesto', db.String(255))
 
     @hybrid_property
     def codigo(self)->str:

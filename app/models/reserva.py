@@ -4,12 +4,12 @@ from sqlalchemy.ext.hybrid import hybrid_property
 class Reserva(db.Model):
     __tablename__ = 'reservas'
 
-    __id = db.Column(db.Integer, primary_key=True)
-    __codigo = db.Column(db.String(255))
-    __fecha_inicio = db.Column(db.String(255))
-    __fecha_fin = db.Column(db.String(255))
-    __num_cabana = db.Column(db.String(255))
-    __codigo_cliente = db.Column(db.String(255))
+    __id = db.Column('id', db.Integer, primary_key=True)
+    __codigo = db.Column('codigo', db.String(255))
+    __fecha_inicio = db.Column('fecha_inicio', db.String(255))
+    __fecha_fin = db.Column('fecha_fin', db.String(255))
+    __num_cabana = db.Column('num_cabana', db.String(255))
+    __codigo_cliente = db.Column('codigo_cliente', db.String(255))
 
     @hybrid_property
     def codigo(self)->str:
